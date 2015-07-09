@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Molly&#39;s backyard : For sharing">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Molly&#39;s backyard</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/yuliblossom">View on GitHub</a>
+
+          <h1 id="project_title">Molly&#39;s backyard</h1>
+          <h2 id="project_tagline">For sharing</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="welcome-to-mollys-github-pages" class="anchor" href="#welcome-to-mollys-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Molly's GitHub Pages.</h3>
+
+<ul>
+<li>This is my first githubBlog, thanks for reading.</li>
+</ul>
+
+<h3>
+<a id="代理" class="anchor" href="#%E4%BB%A3%E7%90%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>代理</h3>
+
+<ul>
+<li>
+<p>代理设计模式的作用:</p>
+
+<ul>
+<li>1.A对象监听B对象的一些行为，A成为B的代理</li>
+<li>2.B对象想告诉A对象一些事情，A成为B的代理</li>
+</ul>
+</li>
+<li>
+<p>代理设计模式的总结：</p>
+
+<ul>
+<li>如果你想监听别人的一些行为，那么你就要成为别人的代理</li>
+<li>如果你想告诉别人一些事情，那么就让别人成为你的代理</li>
+</ul>
+</li>
+<li>
+<p>代理设计模式的开发步骤</p>
+
+<ul>
+<li>1.拟一份协议（协议名字的格式：控件名 + Delegate），在协议里面声明一些代理方法（一般代理方法都是<a href="https://github.com/optional" class="user-mention">@optional</a>）</li>
+<li>2.声明一个代理属性：<a href="https://github.com/property" class="user-mention">@property</a> (nonatomic, weak) id&lt;代理协议&gt; delegate;</li>
+<li>3.在内部发生某些行为时，调用代理对应的代理方法，通知代理内部发生什么事</li>
+<li>4.设置代理：xxx.delegate = yyy;</li>
+<li>5.yyy对象遵守协议，实现代理方法</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="代理和通知的区别" class="anchor" href="#%E4%BB%A3%E7%90%86%E5%92%8C%E9%80%9A%E7%9F%A5%E7%9A%84%E5%8C%BA%E5%88%AB" aria-hidden="true"><span class="octicon octicon-link"></span></a>代理和通知的区别</h3>
+
+<ul>
+<li>代理：1个对象只能告诉另1个对象发生了什么事</li>
+<li>通知：1个对象可以告诉N个对象发生了什么事</li>
+</ul>
+
+<h3>
+<a id="kvckvo" class="anchor" href="#kvckvo" aria-hidden="true"><span class="octicon octicon-link"></span></a>KVC\KVO</h3>
+
+<ul>
+<li>KVC(Key Value Coding)常见作用：给模型属性赋值</li>
+<li>KVO(Key Value Observing)常用作用：监听模型属性值的改变</li>
+<li>KVO的使用步骤<br>
+</li>
+</ul>
+
+<div class="highlight highlight-objc"><pre><span class="pl-c">// cc监听了aa的name属性的改变</span>
+[aa <span class="pl-c1">addObserver:</span>cc <span class="pl-c1">forKeyPath:</span><span class="pl-s"><span class="pl-pds">@"</span>name<span class="pl-pds">"</span></span> <span class="pl-c1">options:</span> NSKeyValueObservingOptionOld <span class="pl-c1">context:</span><span class="pl-c1">nil</span>];
+
+<span class="pl-c">// cc得实现监听方法</span>
+<span class="pl-c">/**</span>
+<span class="pl-c"> * 当监听到object的keyPath属性发生了改变</span>
+<span class="pl-c"> */</span>
+- (<span class="pl-k">void</span>)observeValueForKeyPath:(<span class="pl-c1">NSString</span> *)keyPath ofObject:(<span class="pl-k">id</span>)object change:(<span class="pl-c1">NSDictionary</span> *)change context:(<span class="pl-k">void</span> *)context
+{
+    <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>监听到<span class="pl-c1">%@</span>对象的<span class="pl-c1">%@</span>属性发生了改变， <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, object, keyPath, change);
+}</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("delegate");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
